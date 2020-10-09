@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/page_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/text_label_page_home"/>
+    <item
+        android:id="@+id/page_job"
+        android:icon="@drawable/ic_baseline_work_outline_24"
+        android:title="@string/text_label_page_job"/>
+    <item
+        android:id="@+id/page_support"
+        android:icon="@drawable/ic_outline_contact_support_24"
+        android:title="@string/text_label_page_support"/>
+    <item
+        android:id="@+id/page_account"
+        android:icon="@drawable/ic_outline_account_circle_24"
+        android:title="@string/text_label_page_account"/>
+</menu>

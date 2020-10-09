@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ges2Coin</string>
+    <string name="text_label_page_home">Trang Chủ</string>
+    <string name="text_label_page_job">Công Việc</string>
+    <string name="text_label_page_support">Hỗ Trợ</string>
+    <string name="text_label_page_account">Tài Khoản</string>
+    <string name="welcome">Chào mừng, </string>
+    <string name="balance">Số dư</string>
+    <string name="waiting">Chờ duyệt</string>
+    <string name="warning">Cần làm lại</string>
+    <string name="getjob">Tìm việc làm</string>
+    <string name="getmoney">Rút tiền</string>
+    <string name="withdrawal">Lịch sử rút tiền</string>
+    <string name="needsupport">Bạn cần hỗ trợ gì?</string>
+    <string name="invitetitle">Invite your friends to earn money together</string>
+    <string name="invitecontent">Share your earning money opportunity to your friends. Get 5% earnings from people you invited</string>
+    <string name="searchhere">Bạn cần tìm...</string>
+    <string name="question">Câu hỏi thường gặp?</string>
+    <style name="job_list">Danh sách công việc</style>
+</resources>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="@color/colorBackground">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/needsupport"
+        android:textSize="23dp" />
+
+    <EditText
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/searchhere"
+        android:background="@drawable/search"
+        android:padding="7dp"
+        android:drawablePadding="5dp"
+        android:layout_marginVertical="10dp"
+        android:drawableLeft="@drawable/ic_baseline_search_24" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/question"
+        android:textSize="23dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/getmoney"
+        android:padding="10dp"
+        android:weightSum="20"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/question_number"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the question"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="19"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/getmoney"
+        android:padding="10dp"
+        android:weightSum="20"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/question_number"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the question"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="19"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/getmoney"
+        android:padding="10dp"
+        android:weightSum="20"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/question_number"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the question"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="19"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/getmoney"
+        android:padding="10dp"
+        android:weightSum="20"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/question_number"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the question"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="19"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/getmoney"
+        android:padding="10dp"
+        android:weightSum="20"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/question_number"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the question"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="19"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/getmoney"
+        android:padding="10dp"
+        android:weightSum="20"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:text="1"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/question_number"
+            android:gravity="center_horizontal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This is the question"
+            android:textColor="@color/colorPrimary"
+            android:layout_weight="19"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+    </LinearLayout>
+
+
+</LinearLayout>

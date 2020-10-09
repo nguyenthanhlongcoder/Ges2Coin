@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Ges2Coin</string>
+    <string name="text_label_page_home">Home</string>
+    <string name="text_label_page_job">Job</string>
+    <string name="text_label_page_support">Support</string>
+    <string name="text_label_page_account">Account</string>
+    <string name="welcome">Welcome, </string>
+    <string name="balance">Balance</string>
+    <string name="waiting">Waiting</string>
+    <string name="warning">Need to remake</string>
+    <string name="getjob">Get Job</string>
+    <string name="getmoney">Get Money</string>
+    <string name="withdrawal">History</string>
+    <string name="invitetitle">Invite your friends to earn money together</string>
+    <string name="invitecontent">Share your earning money opportunity to your friends. Get 5% earnings from people you invited</string>
+    <string name="needsupport">Need Support?</string>
+    <string name="searchhere">Search here...</string>
+    <string name="question">Frequently asked questions?</string>
+    <string name="job_list">Job List</string>
+    <string name="job_worked">Job Worked</string>
+    <string name="earn_coins">Earn coins from servey</string>
+
 </resources>
