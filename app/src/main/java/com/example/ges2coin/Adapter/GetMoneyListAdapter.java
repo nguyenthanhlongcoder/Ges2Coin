@@ -51,7 +51,6 @@ public class GetMoneyListAdapter extends BaseAdapter {
 
         view = inflater.inflate(R.layout.getmoney_list, null, true);
 
-
         money = view.findViewById(R.id.money);
         time = view.findViewById(R.id.time);
         name = view.findViewById(R.id.name);

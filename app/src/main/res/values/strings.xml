@@ -19,5 +19,15 @@
     <string name="job_list">Job List</string>
     <string name="job_worked">Job Worked</string>
     <string name="earn_coins">Earn coins from servey</string>
+    <string name="remain">"Remain: "</string>
+    <string name="all">All</string>
+    <string name="step_1">Step 1: Take the survey</string>
+    <string name="google_form_content">Take the survey with Google Form via your Broswer.</string>
+    <string name="step_2">Step 2: Get Coin</string>
+    <string name="finish">Finish</string>
+    <string name="finish_content">Click here to get coin after taking the survey.</string>
+    <string name="report">Report</string>
+    <string name="report_content">Report to the system when something was wrong.</string>
+    <string name="detail">Detail</string>
 
 </resources>

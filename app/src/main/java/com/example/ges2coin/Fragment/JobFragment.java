@@ -1,5 +1,6 @@
 package com.example.ges2coin.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.ges2coin.Adapter.ViewPagerAdapter;
@@ -23,7 +25,8 @@ public class JobFragment extends Fragment {
     private TabLayout tabLayout;
     private JobListFragment jobListFragment;
     private JobWorkedFragment jobWorkedFragment;
-
+    private FragmentActivity myContext;
+    private ViewPagerAdapter viewPagerAdapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,18 +40,27 @@ public class JobFragment extends Fragment {
 
         tabLayout.setupWithViewPager(viewPager);
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getFragmentManager(), 0);
+        viewPagerAdapter = new ViewPagerAdapter(myContext.getSupportFragmentManager(), 0);
 
         viewPagerAdapter.addFragment(jobListFragment, "Job List");
         viewPagerAdapter.addFragment(jobWorkedFragment, "Job Worked");
+
         viewPager.setAdapter(viewPagerAdapter);
 
-        viewPagerAdapter.notifyDataSetChanged();
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_list_alt_24);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_playlist_add_check_24);
+
         return view;
     }
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         inflater.inflate(R.menu.toolbar_menu, menu);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        myContext = (FragmentActivity)context;
+        super.onAttach(context);
     }
 }
