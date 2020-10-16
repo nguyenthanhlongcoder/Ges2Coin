@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.ges2coin.Fragment.AccountFragment;
 import com.example.ges2coin.Fragment.HomeFragment;
 import com.example.ges2coin.Fragment.JobFragment;
 import com.example.ges2coin.Fragment.SupportFragment;
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.page_job:
                         selectedFragment = new JobFragment();
+                        break;
+                    case R.id.page_account:
+                        selectedFragment = new AccountFragment();
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
