@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#644B8D"
+    android:gravity="center"
+    >
+
+
+
+    <LinearLayout
+        android:background="@drawable/custom_background_login"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textStyle="italic"
+            android:textColor="#000"
+            android:fontFamily="sans-serif-light"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_signin_username"
+            android:hint="Type Username"
+            android:padding="10dp"
+            android:background="@drawable/custom_edt"
+            />
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textStyle="italic"
+            android:textColor="#000"
+            android:fontFamily="sans-serif-light"
+            android:textSize="20sp"/>
+        <EditText
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_signin_password"
+            android:hint="Type Password"
+            android:padding="10dp"
+            android:background="@drawable/custom_edt"
+            />
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Repeat Password"
+            android:textStyle="italic"
+            android:textColor="#000"
+            android:fontFamily="sans-serif-light"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_signin_repeatpassword"
+            android:hint="Type Repeat Password"
+            android:padding="10dp"
+            android:background="@drawable/custom_edt"
+            />
+
+        <TextView
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gift Code (If you have)"
+            android:textStyle="italic"
+            android:textColor="#000"
+            android:fontFamily="sans-serif-light"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_signin_giftcode"
+            android:background="@drawable/custom_edt"
+            android:inputType="textPassword"
+            android:hint="Type Gift Code"
+            android:padding="10dp"
+            />
+
+
+        <Button
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_signin"
+            android:textColor="#FFF"
+            android:text="Sign Up"
+            android:background="@drawable/custom_btn_login"
+            />
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="return"
+                android:textAlignment="textEnd"
+                android:textStyle="italic"
+                android:paddingLeft="5dp"
+                android:textColor="#FE0000"
+                android:gravity="end" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
