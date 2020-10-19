@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.ges2coin.Activity.MainActivity;
 import com.example.ges2coin.Adapter.ViewPagerAdapter;
 import com.example.ges2coin.R;
 import com.google.android.material.tabs.TabLayout;
