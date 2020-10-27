@@ -34,6 +34,12 @@ public class JobListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_joblist, null, true);
 
+        return  view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         list_job = view.findViewById(R.id.list_job);
 
         data.add(new JobData("Khao sat", "Kiem tien online", 10, 900, 200));
@@ -49,9 +55,7 @@ public class JobListFragment extends Fragment {
             }
         });
         JobListAdapter adapter = new JobListAdapter(getContext(), R.layout.getmoney_list, data);
-        Log.d("TAG", "onCreateView");
 
         list_job.setAdapter(adapter);
-        return  view;
     }
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "122132207515",
+    "firebase_url": "https://ges2coin-22950.firebaseio.com",
+    "project_id": "ges2coin-22950",
+    "storage_bucket": "ges2coin-22950.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122132207515:android:f2f2bdc564f66a4d34733e",
+        "android_client_info": {
+          "package_name": "com.example.ges2coin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122132207515-7k3qv61mj58pjt81knft4ibl1v7ldru0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ges2coin",
+            "certificate_hash": "671afce13d95d28aad4d09709ded65d5d5f97fa7"
+          }
+        },
+        {
+          "client_id": "122132207515-rpcr0nekrk4m50tujqoc70rpkhdd0505.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDjwIvYMKn-bw_rORwcji0KAamUmyfSys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122132207515-rpcr0nekrk4m50tujqoc70rpkhdd0505.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

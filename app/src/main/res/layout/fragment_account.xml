@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:text="lehoangneu958"
             android:textSize="25sp"
-            android:id="@+id/txt_account"
+            android:id="@+id/txt_username"
             />
         <LinearLayout
             android:layout_marginTop="16dp"
@@ -232,6 +232,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="20"
+                android:id="@+id/btn_signout"
                 >
                 <ImageView
                     android:layout_width="50dp"

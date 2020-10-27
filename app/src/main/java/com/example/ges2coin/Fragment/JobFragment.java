@@ -2,22 +2,19 @@ package com.example.ges2coin.Fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.ges2coin.Activity.MainActivity;
 import com.example.ges2coin.Adapter.ViewPagerAdapter;
 import com.example.ges2coin.R;
 import com.google.android.material.tabs.TabLayout;
@@ -34,6 +31,12 @@ public class JobFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_job, container, false);
 
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         viewPager = view.findViewById(R.id.view_pager);
         tabLayout = view.findViewById(R.id.tab_layout);
 
@@ -43,7 +46,6 @@ public class JobFragment extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
 
         viewPagerAdapter = new ViewPagerAdapter(myContext.getSupportFragmentManager(), 0);
-
         viewPagerAdapter.addFragment(jobListFragment, "Job List");
         viewPagerAdapter.addFragment(jobWorkedFragment, "Job Worked");
 
@@ -52,7 +54,7 @@ public class JobFragment extends Fragment {
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_list_alt_24);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_playlist_add_check_24);
 
-        return view;
+        Log.d("TAG", "Render");
     }
 
     @Override
