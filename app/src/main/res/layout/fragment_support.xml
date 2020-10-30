@@ -34,170 +34,303 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/getmoney"
-        android:padding="10dp"
-        android:weightSum="20"
-        android:layout_marginBottom="10dp">
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:text="1"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/question_number"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        >
+        <LinearLayout
+            android:id="@+id/layout_content1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This is the question"
-            android:textColor="@color/colorPrimary"
-            android:layout_weight="19"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+            android:padding="10dp"
+            android:weightSum="20"
+            >
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/question_number"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the question 1"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="19"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+        </LinearLayout>
+
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/support_content1"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="this is content 1"
+                android:textSize="20sp"
+                />
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/getmoney"
-        android:padding="10dp"
-        android:weightSum="20"
-        android:layout_marginBottom="10dp">
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:text="1"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/question_number"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        >
+        <LinearLayout
+            android:id="@+id/layout_content2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This is the question"
-            android:textColor="@color/colorPrimary"
-            android:layout_weight="19"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+            android:padding="10dp"
+            android:weightSum="20"
+            >
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/question_number"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the question 2"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="19"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+        </LinearLayout>
+
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/support_content2"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="this is content 2"
+                android:textSize="20sp"
+                />
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/getmoney"
-        android:padding="10dp"
-        android:weightSum="20"
-        android:layout_marginBottom="10dp">
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:text="1"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/question_number"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        >
+        <LinearLayout
+            android:id="@+id/layout_content3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This is the question"
-            android:textColor="@color/colorPrimary"
-            android:layout_weight="19"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+            android:padding="10dp"
+            android:weightSum="20"
+            >
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/question_number"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the question 3"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="19"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+        </LinearLayout>
+
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/support_content3"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="this is content 3"
+                android:textSize="20sp"
+                />
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/getmoney"
-        android:padding="10dp"
-        android:weightSum="20"
-        android:layout_marginBottom="10dp">
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:text="1"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/question_number"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        >
+        <LinearLayout
+            android:id="@+id/layout_content4"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This is the question"
-            android:textColor="@color/colorPrimary"
-            android:layout_weight="19"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+            android:padding="10dp"
+            android:weightSum="20"
+            >
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="4"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/question_number"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the question 4"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="19"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+        </LinearLayout>
+
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/support_content4"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="this is content 4"
+                android:textSize="20sp"
+                />
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/getmoney"
-        android:padding="10dp"
-        android:weightSum="20"
-        android:layout_marginBottom="10dp">
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:text="1"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/question_number"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+        >
+        <LinearLayout
+            android:id="@+id/layout_content5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This is the question"
-            android:textColor="@color/colorPrimary"
-            android:layout_weight="19"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/getmoney"
-        android:padding="10dp"
-        android:weightSum="20"
-        android:layout_marginBottom="10dp">
-        <TextView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:text="1"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:layout_marginHorizontal="5dp"
-            android:background="@drawable/question_number"
-            android:gravity="center_horizontal" />
-        <TextView
-            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:weightSum="20"
+            >
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:text="5"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/question_number"
+                android:gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is the question 5"
+                android:textColor="@color/colorPrimary"
+                android:layout_weight="19"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+        </LinearLayout>
+
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="This is the question"
-            android:textColor="@color/colorPrimary"
-            android:layout_weight="19"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_baseline_keyboard_arrow_right_24"/>
+            android:id="@+id/support_content5"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="this is content 5"
+                android:textSize="20sp"
+                />
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
     </LinearLayout>
+
 
 
 </LinearLayout>
