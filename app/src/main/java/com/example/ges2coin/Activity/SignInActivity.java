@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ges2coin.R;
 import com.facebook.AccessToken;
@@ -32,6 +34,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthCredential;
@@ -49,10 +52,13 @@ public class SignInActivity extends AppCompatActivity {
     SignInButton btn_googleSignIn;
     LoginButton btn_facebookLogin;
     TextView btn_signup;
+    Button btn_login;
+    TextInputLayout edt_email, edt_password;
+
     private GoogleSignInClient mGoogleSignInClient;
     private static int SIGN_IN = 1;
     CallbackManager callbackManager;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +79,9 @@ public class SignInActivity extends AppCompatActivity {
         btn_signup = findViewById(R.id.btn_signup);
         facebookButton = findViewById(R.id.facebook);
         googleButton = findViewById(R.id.google);
+        btn_login = findViewById(R.id.btn_login);
+        edt_email = findViewById(R.id.edt_email);
+        edt_password = findViewById(R.id.edt_password);
 
         facebookButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -204,6 +213,38 @@ public class SignInActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+    }
+
+    public void loginUser(View view) {
+        String email = edt_email.getEditText().getText().toString().trim();
+        String password = edt_password.getEditText().getText().toString().trim();
+
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d("TAG", "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w("TAG", "signInWithEmail:failure", task.getException());
+                            Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                            // ...
+                        }
+
+                        // ...
+                    }
+                });
+    }
+
+    private void updateUI(FirebaseUser user) {
     }
 }
 

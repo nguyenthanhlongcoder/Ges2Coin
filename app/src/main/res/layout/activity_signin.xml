@@ -32,7 +32,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/username">
+                app:startIconDrawable="@drawable/ic_baseline_mail_outline_24"
+                android:id="@+id/edt_email">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -45,7 +46,8 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/password"
+                app:startIconDrawable="@drawable/ic_baseline_lock_open_24"
+                android:id="@+id/edt_password"
                 app:endIconMode="password_toggle">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -83,6 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btn_login"
+                android:onClick="loginUser"
                 android:textColor="#FFF"
                 android:text="SIGN IN"
                 android:elevation="10dp"

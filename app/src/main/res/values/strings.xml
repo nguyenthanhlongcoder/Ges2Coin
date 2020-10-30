@@ -29,6 +29,9 @@
     <string name="report">Report</string>
     <string name="report_content">Report to the system when something was wrong.</string>
     <string name="detail">Detail</string>
-    <string name="facebook_app_id">774083986484451</string> <string name="fb_login_protocol_scheme">fb774083986484451</string>
+    <string name="facebook_app_id">774083986484451</string>
+    <string name="fb_login_protocol_scheme">fb774083986484451</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
