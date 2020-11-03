@@ -43,13 +43,12 @@ public class JobFragment extends Fragment {
         jobListFragment = new JobListFragment();
         jobWorkedFragment = new JobWorkedFragment();
 
-        tabLayout.setupWithViewPager(viewPager);
-
         viewPagerAdapter = new ViewPagerAdapter(myContext.getSupportFragmentManager(), 0);
         viewPagerAdapter.addFragment(jobListFragment, "Job List");
         viewPagerAdapter.addFragment(jobWorkedFragment, "Job Worked");
 
         viewPager.setAdapter(viewPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_list_alt_24);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_playlist_add_check_24);

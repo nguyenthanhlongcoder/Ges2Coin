@@ -1,9 +1,11 @@
 package com.example.ges2coin.Activity;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ges2coin.R;
@@ -73,12 +76,56 @@ public class SignUpActivity  extends AppCompatActivity {
                 edt_password.setError("");
             if (password.equals(confirm_password) == true) {
                 edt_confirm_password.setError("");
+
                 mFirebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
+                                    mFirebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if(task.isSuccessful()){
+                                                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(SignUpActivity.this);
+                                                LayoutInflater inflater = SignUpActivity.this.getLayoutInflater();
+
+                                                View dialogView = inflater.inflate(R.layout.custom_alert_dialog, null);
+
+                                                dialogBuilder.setView(dialogView);
+
+                                                TextView title = dialogView.findViewById(R.id.txt_dialog_title);
+                                                TextView content = dialogView.findViewById(R.id.txt_dialog_content);
+                                                Button positive = dialogView.findViewById(R.id.btn_positive);
+                                                Button negative = dialogView.findViewById(R.id.btn_negative);
+
+                                                positive.setText("Open Mail");
+                                                title.setText("Sent Verification Email");
+                                                content.setText("Registering account successful. Please verify your email.");
+                                                final AlertDialog alertDialog = dialogBuilder.create();
+
+                                                alertDialog.show();
+                                                positive.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        alertDialog.dismiss();
+
+                                                        Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.android.gm");
+                                                        startActivity(intent);
+                                                        finish();
+                                                    }
+                                                });
+
+                                                negative.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        alertDialog.dismiss();
+                                                        finish();
+                                                    }
+                                                });
+                                            }
+                                        }
+                                    });
                                     Log.d("TAG", "createUserWithEmail:success");
                                 } else {
                                     // If sign in fails, display a message to the user.
