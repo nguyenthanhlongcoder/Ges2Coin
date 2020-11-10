@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardview_expandable1">
@@ -46,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/getmoney"
                     android:orientation="vertical"
-                    android:layout_marginBottom="10dp"
+
                     >
                     <LinearLayout
                         android:id="@+id/layout_content1"
@@ -92,6 +93,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardview_expandable2">
@@ -148,6 +150,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardview_expandable3">
@@ -202,6 +205,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardview_expandable4">
@@ -256,6 +260,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cardview_expandable5">
