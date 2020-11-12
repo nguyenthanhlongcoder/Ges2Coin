@@ -40,12 +40,7 @@ public class JobFragment extends Fragment {
         viewPager = view.findViewById(R.id.view_pager);
         tabLayout = view.findViewById(R.id.tab_layout);
 
-        jobListFragment = new JobListFragment();
-        jobWorkedFragment = new JobWorkedFragment();
-
         viewPagerAdapter = new ViewPagerAdapter(myContext.getSupportFragmentManager(), 0);
-        viewPagerAdapter.addFragment(jobListFragment, "Job List");
-        viewPagerAdapter.addFragment(jobWorkedFragment, "Job Worked");
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);

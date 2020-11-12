@@ -27,6 +27,7 @@ public class AddJobActivity extends AppCompatActivity {
     EditText edt_link_survey;
     EditText edt_campaign_name;
     EditText edt_quality;
+    EditText edt_description;
     Button btn_create_survey;
     Chip chip_all, chip_mr, chip_ei, chip_es, chip_js, chip_cs, chip_te, chip_ba, chip_ee, chip_lg;
     RadioButton radio_all_gender, radio_male, radio_female, radio_all_age, radio_18to32, radio_33to47, radio_48;
@@ -51,10 +52,10 @@ public class AddJobActivity extends AppCompatActivity {
         String linkSurvey = edt_link_survey.getText().toString().trim();
         String campaignName = edt_campaign_name.getText().toString().trim();
         Integer quality = Integer.valueOf(edt_quality.getText().toString().trim());
+        String description = edt_description.getText().toString().trim();
         String gender = "";
         String age = "";
         ArrayList<String> category = new ArrayList<>();
-
 
         if (chip_all.isChecked()){
             category.add("All");
@@ -106,10 +107,10 @@ public class AddJobActivity extends AppCompatActivity {
             age = "48";
         }
 
-
-        SurveyInfo surveyInfo = new SurveyInfo(linkSurvey, campaignName, age, gender, quality, category);
         final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
         String id = myRef.push().getKey();
+        SurveyInfo surveyInfo = new SurveyInfo(id, linkSurvey, campaignName,description, age, gender, quality, category, "Chờ duyệt");
+
         myRef.child("Survey").child(id).setValue(surveyInfo);
 
     }
@@ -118,6 +119,7 @@ public class AddJobActivity extends AppCompatActivity {
         edt_link_survey = findViewById(R.id.edt_link_survey);
         edt_campaign_name = findViewById(R.id.edt_campaign_name);
         edt_quality = findViewById(R.id.edt_quality);
+        edt_description = findViewById(R.id.edt_description);
         btn_create_survey = findViewById(R.id.btn_create_survey);
         chip_all = findViewById(R.id.chip_all);
         chip_ba = findViewById(R.id.chip_ba);
