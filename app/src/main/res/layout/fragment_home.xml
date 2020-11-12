@@ -238,40 +238,51 @@
                     android:layout_height="fill_parent"
                     android:src="@drawable/friends"/>
             </LinearLayout>
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_home"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="10dp"
-                android:weightSum="1"
-                >
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="10dp"
+                        android:weightSum="1"
+                        >
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:text="@string/getmoney"
-                    android:textColor="@color/colorPrimary"
-                    android:textAlignment="inherit"
-                    android:gravity="center_vertical"
-                    android:textSize="15sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:text="@string/getmoney"
+                            android:textColor="@color/colorPrimary"
+                            android:textAlignment="inherit"
+                            android:gravity="center_vertical"
+                            android:textSize="15sp" />
 
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="right"
-                    android:background="@drawable/circle_withdrawalhistory"
-                    android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
+                        <ImageView
+                            android:id="@+id/img_arrow_home"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="right"
+                            android:background="@drawable/circle_withdrawalhistory"
+                            android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
 
-            </LinearLayout>
-            <com.example.ges2coin.Custom.NestedListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/list_getMoney"
-                android:divider="@android:color/transparent"
-                android:dividerHeight="10dp"
-                android:layout_margin="15dp"
-                />
+                    </LinearLayout>
+                    <com.example.ges2coin.Custom.NestedListView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/list_getMoney"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="10dp"
+                        android:layout_margin="15dp"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
 
