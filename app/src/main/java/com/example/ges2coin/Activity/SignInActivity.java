@@ -160,9 +160,9 @@ public class SignInActivity extends AppCompatActivity {
 
         FirebaseUser user = mAuth.getCurrentUser();
 
-//        if(user != null){
-//            startActivity(new Intent(SignInActivity.this, MainActivity.class));
-//        }
+        if(user != null){
+            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+        }
 
     }
 

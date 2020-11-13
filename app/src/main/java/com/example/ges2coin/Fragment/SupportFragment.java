@@ -18,17 +18,17 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.ges2coin.R;
-import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 
 public class SupportFragment extends Fragment {
+
     ImageView arrow1,arrow2,arrow3,arrow4,arrow5;
     LinearLayout layout_content1, layout_content2,layout_content3,layout_content4,layout_content5;
     TextView support_content1,support_content2,support_content3,support_content4,support_content5;
-    CardView cardview_expandable1,cardview_expandable2,cardview_expandable3,cardview_expandable4,cardview_expandable5;
+    CardView cardview_expandable1, cardview_expandable2, cardview_expandable3, cardview_expandable4, cardview_expandable5;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_support, container, false);
+        View view = inflater.inflate(R.layout.fragment_support, container, false);
 
         layout_content1 = view.findViewById(R.id.layout_content1);
         layout_content2 = view.findViewById(R.id.layout_content2);

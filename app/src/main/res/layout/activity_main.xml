@@ -6,11 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
-    <FrameLayout
+<!--    <FrameLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:id="@+id/fragment_container"-->
+<!--        android:layout_above="@+id/bottom_navigation"/>-->
+
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment_container"
-        android:layout_above="@+id/bottom_navigation"/>
+        android:layout_above="@id/bottom_navigation"
+        android:id="@+id/view_pager"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
