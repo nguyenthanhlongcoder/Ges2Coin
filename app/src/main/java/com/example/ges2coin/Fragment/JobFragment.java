@@ -15,7 +15,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.ges2coin.Adapter.ViewPagerAdapter;
 import com.example.ges2coin.Adapter.ViewPagerJobAdapter;
 import com.example.ges2coin.R;
 import com.google.android.material.tabs.TabLayout;

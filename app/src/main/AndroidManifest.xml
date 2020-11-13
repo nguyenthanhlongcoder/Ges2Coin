@@ -33,7 +33,7 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.SignInActivity">
+        <activity android:name="com.example.ges2coin.Activity.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

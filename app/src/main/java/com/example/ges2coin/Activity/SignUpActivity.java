@@ -17,14 +17,19 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ges2coin.Object.UserData;
+import com.example.ges2coin.Object.YourSurveyData;
 import com.example.ges2coin.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class SignUpActivity  extends AppCompatActivity {
@@ -65,7 +70,7 @@ public class SignUpActivity  extends AppCompatActivity {
     public void register(View view) {
 
         String password = edt_password.getEditText().getText().toString().trim();
-        String email = edt_email.getEditText().getText().toString().trim();
+        final String email = edt_email.getEditText().getText().toString().trim();
         String confirm_password = edt_confirm_password.getEditText().getText().toString().trim();
 
         if(isEmail(email) == true){
@@ -127,6 +132,12 @@ public class SignUpActivity  extends AppCompatActivity {
                                         }
                                     });
                                     Log.d("TAG", "createUserWithEmail:success");
+
+                                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                    UserData userData = new UserData(mFirebaseAuth.getCurrentUser().getUid(), email, null, email, 0, 0, null, null, null);
+
+                                    db.collection("users").document(userData.getId()).set(userData);
+
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w("TAG", "createUserWithEmail:failure", task.getException());
