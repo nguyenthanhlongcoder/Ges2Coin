@@ -16,16 +16,15 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.ges2coin.Adapter.ViewPagerAdapter;
+import com.example.ges2coin.Adapter.ViewPagerJobAdapter;
 import com.example.ges2coin.R;
 import com.google.android.material.tabs.TabLayout;
 
 public class JobFragment extends Fragment {
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    private JobListFragment jobListFragment;
-    private JobWorkedFragment jobWorkedFragment;
     private FragmentActivity myContext;
-    private ViewPagerAdapter viewPagerAdapter;
+    private ViewPagerJobAdapter viewPagerJobAdapter;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,18 +36,17 @@ public class JobFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        viewPager = view.findViewById(R.id.view_pager);
+        viewPager = view.findViewById(R.id.view_pager_job);
         tabLayout = view.findViewById(R.id.tab_layout);
 
-        viewPagerAdapter = new ViewPagerAdapter(myContext.getSupportFragmentManager(), 0);
+        viewPagerJobAdapter = new ViewPagerJobAdapter(myContext.getSupportFragmentManager(), 0);
 
-        viewPager.setAdapter(viewPagerAdapter);
+        viewPager.setAdapter(viewPagerJobAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_list_alt_24);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_playlist_add_check_24);
 
-        Log.d("TAG", "Render");
     }
 
     @Override

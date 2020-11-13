@@ -15,9 +15,8 @@ import com.example.ges2coin.Fragment.SupportFragment;
 
 public class ViewPagerJobAdapter extends ViewPagerAdapter {
     public static final String[] PAGE_TITLES = new String[]{
-            "Home", "Job", "Campaign", "Support", "Account"
+            "job list", "job worked"
     };
-
 
     public ViewPagerJobAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
@@ -28,19 +27,10 @@ public class ViewPagerJobAdapter extends ViewPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0: {
-                return new HomeFragment();
+                return new JobListFragment();
             }
             case 1:{
-                return new JobFragment();
-            }
-            case 2:{
-                return new CampaignFragment();
-            }
-            case 3:{
-                return new SupportFragment();
-            }
-            case 4:{
-                return new AccountFragment();
+                return  new JobWorkedFragment();
             }
             default:{
                 return null;
@@ -51,7 +41,7 @@ public class ViewPagerJobAdapter extends ViewPagerAdapter {
 
     @Override
     public int getCount() {
-        return 5;
+        return 2;
     }
 
     @Nullable
@@ -59,5 +49,6 @@ public class ViewPagerJobAdapter extends ViewPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return PAGE_TITLES[position];
     }
+
 
 }
