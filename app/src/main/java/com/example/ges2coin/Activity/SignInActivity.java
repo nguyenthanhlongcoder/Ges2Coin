@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.ges2coin.Object.UserData;
 import com.example.ges2coin.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -42,6 +43,7 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.shaishavgandhi.loginbuttons.FacebookButton;
 import com.shaishavgandhi.loginbuttons.GoogleButton;
 
@@ -142,7 +144,10 @@ public class SignInActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
                         intent.putExtra("profile", bundle);
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null, null);
 
+                        db.collection("users").document(userData.getId()).set(userData);
 
                         startActivity(intent);
                     }
@@ -205,6 +210,10 @@ public class SignInActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null, null);
+
+                            db.collection("users").document(userData.getId()).set(userData);
                         } else {
                             // If sign in fails, display a message to the user.
 

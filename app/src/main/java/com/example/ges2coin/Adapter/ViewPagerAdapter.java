@@ -18,11 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ViewPagerAdapter extends FragmentPagerAdapter {
-    public static final String[] PAGE_TITLES = new String[]{
-            "Home", "Job", "Campaign", "Support", "Account"
-    };
-
-
     public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
@@ -56,12 +51,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return 5;
-    }
-
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return PAGE_TITLES[position];
     }
 
 }
