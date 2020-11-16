@@ -20,6 +20,7 @@ import com.google.android.material.chip.Chip;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 import java.util.ArrayList;
 
 public class AddJobActivity extends AppCompatActivity {

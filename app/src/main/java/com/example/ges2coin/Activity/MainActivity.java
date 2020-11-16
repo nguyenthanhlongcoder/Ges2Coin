@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavItemId.add(R.id.page_home);
         bottomNavItemId.add(R.id.page_job);
         bottomNavItemId.add(R.id.page_campaign);
-        bottomNavItemId.add(R.id.page_sugpport);
+        bottomNavItemId.add(R.id.page_support);
         bottomNavItemId.add(R.id.page_account);
 
         viewPager = findViewById(R.id.view_pager);
