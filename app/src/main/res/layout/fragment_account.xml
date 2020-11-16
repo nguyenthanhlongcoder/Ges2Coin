@@ -68,7 +68,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
+                android:layout_marginTop="10dp"
                 android:background="@drawable/shadow"
                 android:padding="10dp"
                 android:layout_width="match_parent"
@@ -79,16 +81,16 @@
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:background="@drawable/circle_account"
                     android:src="@drawable/ic_baseline_supervised_user_circle_24"
-                    android:padding="8dp"
+                    android:padding="5dp"
+                    android:background="@drawable/circle_account"
                     />
                 <TextView
                     android:paddingLeft="10dp"
                     android:gravity="center_vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Account management"
+                    android:text="Account Management"
                     android:textSize="15sp"
                     android:layout_weight="19"
                     />
