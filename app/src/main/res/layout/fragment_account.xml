@@ -70,13 +70,13 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/section_account_management"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/shadow"
                 android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:weightSum="20"
                 >
                 <ImageView
                     android:layout_width="50dp"
@@ -199,6 +199,7 @@
                     />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/section_account_settings"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/shadow"
                 android:padding="10dp"

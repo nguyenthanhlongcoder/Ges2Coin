@@ -15,6 +15,7 @@ import com.example.ges2coin.Object.SurveyInfo;
 import com.example.ges2coin.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.chip.Chip;
 import com.google.firebase.database.DatabaseReference;
@@ -112,7 +113,18 @@ public class AddJobActivity extends AppCompatActivity {
         String id = myRef.push().getKey();
         SurveyInfo surveyInfo = new SurveyInfo(id, linkSurvey, campaignName,description, age, gender, quality, category, "Chờ duyệt");
 
-        myRef.child("Survey").child(id).setValue(surveyInfo);
+        myRef.child("Survey").child(id).setValue(surveyInfo).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(AddJobActivity.this, "Add Job success", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(AddJobActivity.this, "Fail: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

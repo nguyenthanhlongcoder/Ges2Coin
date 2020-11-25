@@ -3,7 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="20dp">
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,9 +25,9 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:id="@+id/edt_nickname"
             android:layout_height="wrap_content"
-            app:startIconDrawable="@drawable/ic_baseline_mail_outline_24"
-            android:id="@+id/edt_nickname">
+            app:startIconDrawable="@drawable/ic_baseline_mail_outline_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -69,12 +74,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:startIconDrawable="@drawable/ic_baseline_mail_outline_24"
-            android:id="@+id/edt_birthday">
+            android:id="@+id/edt_age">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your Birthday (only year)"
+                android:hint="Your Age"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -203,5 +208,6 @@
             android:elevation="10dp"
             android:background="@drawable/custom_btn_login" />
     </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

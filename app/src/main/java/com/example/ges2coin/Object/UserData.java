@@ -3,13 +3,16 @@ package com.example.ges2coin.Object;
 import java.util.ArrayList;
 
 public class UserData {
-    String id, displayName, gender, email;
+    String id, displayName, gender, email, status;
     int age, coin;
     ArrayList<String> categories;
     ArrayList<YourSurveyData> yourSurveyData;
     ArrayList<WorkedSurveyData> workedSurveyData;
+    public UserData(){
 
-    public UserData(String id, String displayName, String gender, String email, int age, int coin, ArrayList<String> categories, ArrayList<YourSurveyData> yourSurveyData, ArrayList<WorkedSurveyData> workedSurveyData) {
+    }
+
+    public UserData(String id, String displayName, String gender, String email, int age, int coin, ArrayList<String> categories, ArrayList<YourSurveyData> yourSurveyData, ArrayList<WorkedSurveyData> workedSurveyData, String status) {
         this.id = id;
         this.displayName = displayName;
         this.gender = gender;
@@ -19,6 +22,15 @@ public class UserData {
         this.categories = categories;
         this.yourSurveyData = yourSurveyData;
         this.workedSurveyData = workedSurveyData;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getId() {

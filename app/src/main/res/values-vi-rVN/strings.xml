@@ -17,5 +17,7 @@
     <string name="invitecontent">Share your earning money opportunity to your friends. Get 5% earnings from people you invited</string>
     <string name="searchhere">Bạn cần tìm...</string>
     <string name="question">Câu hỏi thường gặp?</string>
+    <string name="click_here"><u>Nhấp vào đây!</u></string>
+
     <style name="job_list">Danh sách công việc</style>
 </resources>

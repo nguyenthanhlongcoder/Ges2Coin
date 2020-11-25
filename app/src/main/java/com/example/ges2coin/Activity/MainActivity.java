@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), 0);
 
+        viewPager.setOffscreenPageLimit(4);
         viewPager.setAdapter(viewPagerAdapter);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

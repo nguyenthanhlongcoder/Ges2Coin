@@ -1,5 +1,6 @@
 package com.example.ges2coin.Fragment;
 
+import android.accounts.AccountManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.example.ges2coin.Activity.AccountManagerActivity;
+import com.example.ges2coin.Activity.AccountSettingActivity;
 import com.example.ges2coin.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -39,6 +42,7 @@ public class AccountFragment extends Fragment {
     TextView text_username;
     LinearLayout btn_signout;
     GoogleSignInClient mGoogleSignInClient;
+    LinearLayout section_account_management, section_account_settings;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,6 +52,8 @@ public class AccountFragment extends Fragment {
         img_profile = view.findViewById(R.id.img_profile);
         text_username = view.findViewById(R.id.txt_username);
         btn_signout = view.findViewById(R.id.btn_signout);
+        section_account_management = view.findViewById(R.id.section_account_management);
+        section_account_settings = view.findViewById(R.id.section_account_settings);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
 
@@ -76,6 +82,18 @@ public class AccountFragment extends Fragment {
             }
         });
 
+        section_account_management.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AccountManagerActivity.class));
+            }
+        });
+        section_account_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), AccountSettingActivity.class));
+            }
+        });
         return view;
     }
     private void signOut() {
