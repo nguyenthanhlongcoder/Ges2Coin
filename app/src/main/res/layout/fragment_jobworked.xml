@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
     android:background="@color/colorBackground"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,16 +21,137 @@
             android:textColor="@color/colorPrimary"
             android:layout_weight="2"/>
         <ImageView
+            android:id="@+id/img_filter"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:padding="3dp"
-            android:src="@drawable/ic_baseline_today_24"
+            android:src="@drawable/ic_baseline_filter_alt_24"
             android:background="@drawable/circle_withdrawal"/>
 
     </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="10dp"
+        android:id="@+id/cardview_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <HorizontalScrollView
+            android:id="@+id/scrollbar_worked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:scrollbars="none"
+            >
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="false"
+                android:id="@+id/chip_group">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    app:textStartPadding="10dp"
+                    android:textAlignment="center"
+                    android:text="@string/all"
+                    android:id="@+id/chip_all"
+                    android:checked="true"
+                    android:gravity="center_horizontal" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    android:id="@+id/chip_mr"
+                    android:textAlignment="center"
+                    app:textStartPadding="10dp"
+                    android:text="Market Research"
+                    android:gravity="center_horizontal" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    app:textStartPadding="10dp"
+                    android:id="@+id/chip_ei"
+                    android:textAlignment="center"
+                    android:text="Exit Interview"
+                    android:gravity="center_horizontal" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/chip_es"
+                    app:textEndPadding="10dp"
+                    app:textStartPadding="10dp"
+                    android:text="Employee Satisfaction"
+                    />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    app:textStartPadding="10dp"
+                    android:id="@+id/chip_js"
+                    android:text="Job Satisfaction"
+                    />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    app:textStartPadding="10dp"
+                    android:id="@+id/chip_cs"
+                    android:text="Customer Satisfaction"
+                    />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    android:id="@+id/chip_te"
+                    app:textStartPadding="10dp"
+                    android:text="Training Evaluation"
+                    />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    android:id="@+id/chip_ba"
+                    app:textStartPadding="10dp"
+                    android:text="Brand awareness"
+                    />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    android:id="@+id/chip_ee"
+                    app:textStartPadding="10dp"
+                    android:text="Event Evaluation"
+                    />
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:textEndPadding="10dp"
+                    android:id="@+id/chip_lg"
+                    app:textStartPadding="10dp"
+                    android:text="Lead generation"
+                    />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+    </androidx.cardview.widget.CardView>
 
     <ListView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/list_worked_job"
@@ -38,4 +159,4 @@
         android:dividerHeight="10dp"
         />
 
-</FrameLayout>
+</LinearLayout>

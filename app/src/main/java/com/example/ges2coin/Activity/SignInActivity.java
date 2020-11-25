@@ -33,6 +33,7 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
@@ -43,6 +44,7 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.shaishavgandhi.loginbuttons.FacebookButton;
 import com.shaishavgandhi.loginbuttons.GoogleButton;
@@ -145,9 +147,19 @@ public class SignInActivity extends AppCompatActivity {
 
                         intent.putExtra("profile", bundle);
                         FirebaseFirestore db = FirebaseFirestore.getInstance();
-                        UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null, null);
+                        db.collection("users").document(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                if (!task.isSuccessful()){
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null, null, "Chưa xác minh");
 
-                        db.collection("users").document(userData.getId()).set(userData);
+                                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                    db.collection("users").document(userData.getId()).set(userData);
+                                }
+                            }
+                        });
+
 
                         startActivity(intent);
                     }
@@ -165,9 +177,9 @@ public class SignInActivity extends AppCompatActivity {
 
         FirebaseUser user = mAuth.getCurrentUser();
 
-        if(user != null){
-            startActivity(new Intent(SignInActivity.this, MainActivity.class));
-        }
+//        if(user != null){
+//            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+//        }
 
     }
 
@@ -209,11 +221,19 @@ public class SignInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            FirebaseFirestore db = FirebaseFirestore.getInstance();
-                            UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null, null);
+                            final FirebaseUser user = mAuth.getCurrentUser();
+                            final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-                            db.collection("users").document(userData.getId()).set(userData);
+                            db.collection("users").document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                @Override
+                                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                    if (!documentSnapshot.exists()){
+                                        UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null, null, "Chưa xác minh");
+
+                                        db.collection("users").document(userData.getId()).set(userData);
+                                    }
+                                }
+                            });
                         } else {
                             // If sign in fails, display a message to the user.
 

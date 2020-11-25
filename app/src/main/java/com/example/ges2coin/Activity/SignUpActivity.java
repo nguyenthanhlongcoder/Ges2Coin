@@ -134,7 +134,7 @@ public class SignUpActivity  extends AppCompatActivity {
                                     Log.d("TAG", "createUserWithEmail:success");
 
                                     FirebaseFirestore db = FirebaseFirestore.getInstance();
-                                    UserData userData = new UserData(mFirebaseAuth.getCurrentUser().getUid(), email, null, email, 0, 0, null, null, null);
+                                    UserData userData = new UserData(mFirebaseAuth.getCurrentUser().getUid(), email, null, email, 0, 0, null, null, null, "Chưa xác minh");
 
                                     db.collection("users").document(userData.getId()).set(userData);
 
