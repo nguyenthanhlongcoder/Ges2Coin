@@ -22,6 +22,12 @@ android {
         }
     }
 
+    buildFeatures{
+        dataBinding{
+            enabled true
+        }
+    }
+
 }
 
 dependencies {

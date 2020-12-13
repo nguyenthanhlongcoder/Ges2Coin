@@ -8,11 +8,21 @@ public class UserData {
     ArrayList<String> categories;
     ArrayList<YourSurveyData> yourSurveyData;
     ArrayList<WorkedSurveyData> workedSurveyData;
+    ArrayList<String> forYouSurveyData;
+
+    public ArrayList<String> getForYouSurveyData() {
+        return forYouSurveyData;
+    }
+
+    public void setForYouSurveyData(ArrayList<String> forYouSurveyData) {
+        this.forYouSurveyData = forYouSurveyData;
+    }
+
     public UserData(){
 
     }
 
-    public UserData(String id, String displayName, String gender, String email, int age, int coin, ArrayList<String> categories, ArrayList<YourSurveyData> yourSurveyData, ArrayList<WorkedSurveyData> workedSurveyData, String status) {
+    public UserData(String id, String displayName, String gender, String email, int age, int coin, ArrayList<String> categories, ArrayList<YourSurveyData> yourSurveyData, ArrayList<WorkedSurveyData> workedSurveyData,ArrayList<String> forYouSurveyData, String status) {
         this.id = id;
         this.displayName = displayName;
         this.gender = gender;
@@ -23,6 +33,7 @@ public class UserData {
         this.yourSurveyData = yourSurveyData;
         this.workedSurveyData = workedSurveyData;
         this.status = status;
+        this.forYouSurveyData = forYouSurveyData;
     }
 
     public String getStatus() {

@@ -43,13 +43,13 @@ public class SurveyInfo {
     }
 
     String id;
-    Integer quality;
+    int quality;
     ArrayList<String> category;
 
     public  SurveyInfo(){
 
     }
-    public SurveyInfo(String id,String linkSurvey, String campaignName, String description, String age, String gender, Integer quality, ArrayList<String> category, String status) {
+    public SurveyInfo(String id,String linkSurvey, String campaignName, String description, String age, String gender, int quality, ArrayList<String> category, String status) {
         this.id = id;
         this.linkSurvey = linkSurvey;
         this.campaignName = campaignName;
@@ -93,11 +93,11 @@ public class SurveyInfo {
         this.gender = gender;
     }
 
-    public Integer getQuality() {
+    public int getQuality() {
         return quality;
     }
 
-    public void setQuality(Integer quality) {
+    public void setQuality(int quality) {
         this.quality = quality;
     }
 }

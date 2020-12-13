@@ -3,26 +3,28 @@ package com.example.ges2coin.Object;
 public class JobData {
     String name;
     String content;
-    int count;
-    int timeCountDown;
-
-    public int getCount() {
-        return count;
+    int quality;
+    public void JobData(){}
+    public String getId() {
+        return id;
     }
 
-    public int getTimeCountDown() {
-        return timeCountDown;
+    public void setId(String id) {
+        this.id = id;
     }
+
+    String id;
+    public int getQuality() {
+        return quality;
+    }
+
 
     int coins;
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setQuality(int count) {
+        this.quality = count;
     }
 
-    public void setTimeCountDown(int timeCountDown) {
-        this.timeCountDown = timeCountDown;
-    }
 
     public int getCoins() {
         return coins;
@@ -32,11 +34,11 @@ public class JobData {
         this.coins = coins;
     }
 
-    public JobData(String name, String content, int count, int timeCountDown, int coins){
+    public JobData(String id,String name, String content, int quality, int coins){
         this.name = name;
+        this.id = id;
         this.content = content;
-        this.count = count;
-        this.timeCountDown = timeCountDown;
+        this.quality = quality;
         this.coins = coins;
     }
 

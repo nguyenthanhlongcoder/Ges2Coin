@@ -1,12 +1,14 @@
 package com.example.ges2coin.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.ges2coin.Activity.DetailJobActivity;
 import com.example.ges2coin.Object.GetMoneyData;
 import com.example.ges2coin.Object.JobData;
 import com.example.ges2coin.R;
@@ -21,9 +23,10 @@ public class JobListAdapter extends BaseAdapter {
     int layout;
     TextView coin;
     TextView name;
+
     TextView content;
     TextView count;
-    TextView timeCountDown;
+    TextView id;
     public JobListAdapter(Context context, int layout, ArrayList<JobData> data) {
         this.context = context;
         this.data = data;
@@ -55,13 +58,14 @@ public class JobListAdapter extends BaseAdapter {
         content = view.findViewById(R.id.text_jobContent);
         coin = view.findViewById(R.id.text_coin);
         count = view.findViewById(R.id.text_jobCount);
-        timeCountDown = view.findViewById(R.id.text_jobTimeCountDown);
+        id = view.findViewById(R.id.txt_surveyid);
 
         name.setText(data.get(i).getName());
         content.setText(data.get(i).getContent());
         coin.setText(data.get(i).getCoins() + "");
-        count.setText(data.get(i).getCount() + "");
-        timeCountDown.setText(data.get(i).getTimeCountDown() + "");
+        count.setText(data.get(i).getQuality() + "");
+        id.setText(data.get(i).getId());
+
 
         return view;
     }

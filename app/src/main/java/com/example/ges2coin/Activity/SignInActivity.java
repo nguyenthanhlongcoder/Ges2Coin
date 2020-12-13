@@ -152,7 +152,7 @@ public class SignInActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                                 if (!task.isSuccessful()){
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null, null, "Chưa xác minh");
+                                    UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null,null, null, "Chưa xác minh");
 
                                     FirebaseFirestore db = FirebaseFirestore.getInstance();
                                     db.collection("users").document(userData.getId()).set(userData);
@@ -228,7 +228,7 @@ public class SignInActivity extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                                     if (!documentSnapshot.exists()){
-                                        UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null, null, null, "Chưa xác minh");
+                                        UserData userData = new UserData(user.getUid(), user.getEmail(), null, user.getEmail(), 0, 0, null,null, null, null, "Chưa xác minh");
 
                                         db.collection("users").document(userData.getId()).set(userData);
                                     }

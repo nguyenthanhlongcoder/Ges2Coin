@@ -31,16 +31,18 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class JobFragment extends Fragment {
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private FragmentActivity myContext;
     private ViewPagerJobAdapter viewPagerJobAdapter;
-    LinearLayout frame_confirm;
+    private LinearLayout frame_confirm;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    TextView text_clickHere;
+    private TextView text_clickHere;
 
     @Nullable
     @Override
@@ -82,37 +84,26 @@ public class JobFragment extends Fragment {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
         if(account != null){
-            db.collection("users").document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            db.collection("users").document(user.getUid()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
                 @Override
-                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if(documentSnapshot.exists()){
+                public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+                    if (e != null) {
+                        Log.w("TAG", "Listen failed.", e);
+                        return;
+                    }
+
+                    if (documentSnapshot != null && documentSnapshot.exists()) {
                         UserData userData = documentSnapshot.toObject(UserData.class);
-                        if (userData.getStatus().equals("Chưa xác minh")){
+                        if (userData.getStatus().equals("Chưa xác minh")) {
                             frame_confirm.setVisibility(View.VISIBLE);
                             viewPager.setVisibility(View.INVISIBLE);
-                        }else{
+                        } else {
                             frame_confirm.setVisibility(View.INVISIBLE);
                             viewPager.setVisibility(View.VISIBLE);
                         }
+                    } else {
+                        Log.d("TAG", "Current data: null");
                     }
-
-                }
-            });
-        }else{
-            db.collection("users").document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                @Override
-                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if(documentSnapshot.exists()){
-                        UserData userData = documentSnapshot.toObject(UserData.class);
-                        if (userData.getStatus().equals("Chưa xác minh")){
-                            frame_confirm.setVisibility(View.VISIBLE);
-                            viewPager.setVisibility(View.INVISIBLE);
-                        }else{
-                            frame_confirm.setVisibility(View.INVISIBLE);
-                            viewPager.setVisibility(View.VISIBLE);
-                        }
-                    }
-
                 }
             });
         }
