@@ -33,16 +33,22 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
 import java.util.concurrent.Executor;
 
 public class AccountFragment extends Fragment {
     ImageView img_profile;
-    TextView text_username;
+    TextView text_username, text_account_coins;
     LinearLayout btn_signout;
     GoogleSignInClient mGoogleSignInClient;
     LinearLayout section_account_management, section_account_settings;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    final FirebaseUser user = mAuth.getCurrentUser();
+    final FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,6 +57,7 @@ public class AccountFragment extends Fragment {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getActivity());
         img_profile = view.findViewById(R.id.img_profile);
         text_username = view.findViewById(R.id.txt_username);
+        text_account_coins = view.findViewById(R.id.txt_account_coin);
         btn_signout = view.findViewById(R.id.btn_signout);
         section_account_management = view.findViewById(R.id.section_account_management);
         section_account_settings = view.findViewById(R.id.section_account_settings);
@@ -94,23 +101,30 @@ public class AccountFragment extends Fragment {
                 startActivity(new Intent(getActivity(), AccountSettingActivity.class));
             }
         });
+
+        db.collection("users").document(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
+
+                    text_username.setText(document.getData().get("displayName").toString());
+                    text_account_coins.setText(document.getData().get("coin").toString());
+                }
+            }
+        });
         return view;
     }
     private void signOut() {
 
-        LoginManager.getInstance().logOut();
+//        LoginManager.getInstance().logOut();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail().build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
 
-        mGoogleSignInClient.signOut().addOnCompleteListener((Executor) this, new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                getActivity().finish();
-            }
-        });
+        mGoogleSignInClient.signOut();
     }
 
 }

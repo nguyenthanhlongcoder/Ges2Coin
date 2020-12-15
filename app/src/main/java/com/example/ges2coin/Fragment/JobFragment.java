@@ -26,7 +26,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -83,26 +85,23 @@ public class JobFragment extends Fragment {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getActivity());
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         final FirebaseUser user = mAuth.getCurrentUser();
-        if(account != null){
-            db.collection("users").document(user.getUid()).addSnapshotListener(new EventListener<DocumentSnapshot>() {
-                @Override
-                public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
-                    if (e != null) {
-                        Log.w("TAG", "Listen failed.", e);
-                        return;
-                    }
 
-                    if (documentSnapshot != null && documentSnapshot.exists()) {
-                        UserData userData = documentSnapshot.toObject(UserData.class);
-                        if (userData.getStatus().equals("Chưa xác minh")) {
-                            frame_confirm.setVisibility(View.VISIBLE);
-                            viewPager.setVisibility(View.INVISIBLE);
-                        } else {
-                            frame_confirm.setVisibility(View.INVISIBLE);
-                            viewPager.setVisibility(View.VISIBLE);
+        if(account != null){
+            db.collection("users").document(user.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if(task.isSuccessful()){
+                        DocumentSnapshot document = task.getResult();
+                        if(document.exists()){
+                            UserData userData = document.toObject(UserData.class);
+                            if (userData.getStatus().equals("Chưa xác minh")) {
+                                frame_confirm.setVisibility(View.VISIBLE);
+                                viewPager.setVisibility(View.INVISIBLE);
+                            } else {
+                                frame_confirm.setVisibility(View.INVISIBLE);
+                                viewPager.setVisibility(View.VISIBLE);
+                            }
                         }
-                    } else {
-                        Log.d("TAG", "Current data: null");
                     }
                 }
             });

@@ -5,6 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/home_background"
         android:orientation="vertical"
         tools:context=".Activity.DetailJobActivity">
 
@@ -29,6 +30,7 @@
                     app:layout_constraintTop_toTopOf="parent"/>
                 <ImageView
                     android:id="@+id/back"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginHorizontal="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_width="wrap_content"
@@ -218,6 +220,7 @@
             android:layout_height="match_parent"
             android:padding="10dp"
             android:layout_margin="15dp"
+            android:id="@+id/finish"
             android:weightSum="10"
             android:background="@drawable/getmoney">
             <ImageView

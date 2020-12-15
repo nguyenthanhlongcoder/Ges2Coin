@@ -46,7 +46,6 @@ public class AccountManagerActivity extends AppCompatActivity {
                 userReference.update("displayName", displayName);
                 userReference.update("gender", gender);
                 userReference.update("status", "Đã xác minh");
-                userReference.update("forYouSurveyData", null);
 
 
             }

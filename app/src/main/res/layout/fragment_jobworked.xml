@@ -150,13 +150,21 @@
         </HorizontalScrollView>
     </androidx.cardview.widget.CardView>
 
-    <ListView
-        android:layout_marginTop="30dp"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
+        app:swipeRefreshLayoutProgressSpinnerBackgroundColor="@color/colorPrimary"
         android:layout_height="wrap_content"
-        android:id="@+id/list_worked_job"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="10dp"
-        />
+        android:id="@+id/swipe_refresh"
+        >
+        <ListView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/list_worked_job"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10dp"
+            />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </LinearLayout>

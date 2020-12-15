@@ -8,7 +8,7 @@
     android:focusableInTouchMode="true"
     android:focusable="true"
     android:clickable="true"
-    android:layout_marginHorizontal="16dp"
+    android:padding="16dp"
     android:weightSum="1"
     >
 
@@ -28,13 +28,13 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:paddingHorizontal="25dp"
             android:layout_height="wrap_content">
 
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:startIconDrawable="@drawable/ic_baseline_mail_outline_24"
                 android:id="@+id/edt_email">
 
@@ -49,6 +49,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:startIconDrawable="@drawable/ic_baseline_lock_open_24"
                 android:id="@+id/edt_password"
                 app:endIconMode="password_toggle">
@@ -125,9 +126,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="25dp">
-
+            android:layout_height="wrap_content">
 
             <com.shaishavgandhi.loginbuttons.GoogleButton
                 android:layout_marginTop="5dp"
@@ -151,8 +150,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="25dp">
+            android:layout_height="wrap_content">
 
             <com.shaishavgandhi.loginbuttons.FacebookButton
                 android:layout_marginTop = "5dp"

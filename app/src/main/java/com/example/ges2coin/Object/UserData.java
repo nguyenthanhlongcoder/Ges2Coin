@@ -6,23 +6,13 @@ public class UserData {
     String id, displayName, gender, email, status;
     int age, coin;
     ArrayList<String> categories;
-    ArrayList<YourSurveyData> yourSurveyData;
-    ArrayList<WorkedSurveyData> workedSurveyData;
-    ArrayList<String> forYouSurveyData;
 
-    public ArrayList<String> getForYouSurveyData() {
-        return forYouSurveyData;
-    }
-
-    public void setForYouSurveyData(ArrayList<String> forYouSurveyData) {
-        this.forYouSurveyData = forYouSurveyData;
-    }
 
     public UserData(){
 
     }
 
-    public UserData(String id, String displayName, String gender, String email, int age, int coin, ArrayList<String> categories, ArrayList<YourSurveyData> yourSurveyData, ArrayList<WorkedSurveyData> workedSurveyData,ArrayList<String> forYouSurveyData, String status) {
+    public UserData(String id, String displayName, String gender, String email, int age, int coin, ArrayList<String> categories, String status) {
         this.id = id;
         this.displayName = displayName;
         this.gender = gender;
@@ -30,10 +20,7 @@ public class UserData {
         this.age = age;
         this.coin = coin;
         this.categories = categories;
-        this.yourSurveyData = yourSurveyData;
-        this.workedSurveyData = workedSurveyData;
         this.status = status;
-        this.forYouSurveyData = forYouSurveyData;
     }
 
     public String getStatus() {
@@ -100,19 +87,6 @@ public class UserData {
         this.categories = categories;
     }
 
-    public ArrayList<YourSurveyData> getYourSurveyData() {
-        return yourSurveyData;
-    }
 
-    public void setYourSurveyData(ArrayList<YourSurveyData> yourSurveyData) {
-        this.yourSurveyData = yourSurveyData;
-    }
 
-    public ArrayList<WorkedSurveyData> getWorkedSurveyData() {
-        return workedSurveyData;
-    }
-
-    public void setWorkedSurveyData(ArrayList<WorkedSurveyData> workedSurveyData) {
-        this.workedSurveyData = workedSurveyData;
-    }
 }

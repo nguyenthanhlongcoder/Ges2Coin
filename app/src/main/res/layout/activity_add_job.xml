@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,12 +9,83 @@
     android:focusable="true"
     android:clickable="true"
     tools:context=".Activity.AddJobActivity"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/back"
+                android:layout_marginLeft="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/detail"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:layout_marginLeft="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/my_toolbar"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:src="@drawable/ic_baseline_notifications_none_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="@id/settings"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_outline_settings_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/btn_create_survey"
+        android:padding="16dp"
         android:scrollbars="none">
         <LinearLayout
             android:layout_width="match_parent"
@@ -267,16 +338,16 @@
                     android:text="0"/>
             </LinearLayout>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="create"
+                android:id="@+id/btn_create_survey"
+                android:layout_marginVertical="5dp"
+                android:textColor="#FFF"
+                android:background="@drawable/custom_btn_login"/>
         </LinearLayout>
     </ScrollView>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="create"
-        android:id="@+id/btn_create_survey"
-        android:layout_alignParentBottom="true"
-        android:layout_marginVertical="5dp"
-        android:textColor="#FFF"
-        android:background="@drawable/custom_btn_login"/>
 
-</RelativeLayout>
+
+</LinearLayout>

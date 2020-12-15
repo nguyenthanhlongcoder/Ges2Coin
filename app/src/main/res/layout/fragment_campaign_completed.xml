@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
-    android:background="@color/colorBackground"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.CampaignCompletedFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         app:swipeRefreshLayoutProgressSpinnerBackgroundColor="@color/colorPrimary"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
         android:id="@+id/swipe_refresh"
         >
         <ListView
             android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/list_job"
+            android:id="@+id/list_campaign"
             android:scrollbars="none"
             android:divider="@android:color/transparent"
             android:dividerHeight="10dp"
             />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 </FrameLayout>
