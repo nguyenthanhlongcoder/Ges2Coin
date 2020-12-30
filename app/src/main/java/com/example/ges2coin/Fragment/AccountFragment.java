@@ -125,6 +125,8 @@ public class AccountFragment extends Fragment {
         mGoogleSignInClient = GoogleSignIn.getClient(getActivity(), gso);
 
         mGoogleSignInClient.signOut();
+
+        getActivity().finish();
     }
 
 }

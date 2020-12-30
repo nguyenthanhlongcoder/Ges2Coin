@@ -91,7 +91,6 @@ public class JobListFragment extends Fragment {
                                     for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                                         final SurveyInfo surveyInfo = snapshot.getValue(SurveyInfo.class);
 
-
                                         db.collection("users").document(user.getUid()).collection("workedSurveyData").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                                             @Override
                                             public void onComplete(@NonNull Task<QuerySnapshot> task) {

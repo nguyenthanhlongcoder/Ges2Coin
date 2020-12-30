@@ -46,7 +46,7 @@ public class AccountManagerActivity extends AppCompatActivity {
                 userReference.update("displayName", displayName);
                 userReference.update("gender", gender);
                 userReference.update("status", "Đã xác minh");
-
+                finish();
 
             }
         });
@@ -55,9 +55,9 @@ public class AccountManagerActivity extends AppCompatActivity {
     public void getData(){
         displayName = B.edtDisplayName.getEditText().getText().toString().trim();
         if (B.radioMale.isChecked()) {
-            gender = "male";
+            gender = "Male";
         } else {
-            gender = "female";
+            gender = "Female";
         }
         if(!B.edtAge.getEditText().getText().equals("")) {
             age = Integer.parseInt(String.valueOf(B.edtAge.getEditText().getText()));

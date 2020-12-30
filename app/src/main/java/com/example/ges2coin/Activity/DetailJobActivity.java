@@ -149,7 +149,7 @@ public class DetailJobActivity extends AppCompatActivity {
                                                 }
                                             });
 
-
+                                            finish();
                                         }
                                     }
                                 }
